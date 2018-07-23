@@ -1,142 +1,221 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<title>Rita Process Game</title>
-<style>
-body {
-	font-family: "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif;
-	font-size:90%;
-	background: #d9f6ff;
-}
-* {  -moz-border-radius: 5px;
-     -webkit-border-radius: 5px; }
-a:link {text-decoration:none;color:#0000FF;}
-a:active {text-decoration:none;color:#0000FF;}
-a:visited {text-decoration:none;color:#0000FF;}
-a:hover {text-decoration:underline;color:#0000FF;}
-li {list-style-type:none; border:solid 1px gray;margin:0 4px 1px -11px;padding:5px 10px; font-size:13px;cursor:move; background:#E7E7E7;}
-li:hover { background:#FFF; }
-ul {padding-left:1em;margin-left:0em;}
-.pane ul {margin-bottom:4px;}
-li span {font-weight:bold;font-size:105%;}
-.unmovable {list-style-type:none;font-size:1px;padding:0px;margin:0px;border:none;}
-div {
-	float:left;
-	background: #DCDCDC;
-	margin-right:5px;
-	width:130px;
-	border:1px solid #333;
-	margin-bottom:20px;
-}
-.containerTitle { 
-display:block;
-font-size:16px;
-font-weight:bold;
-padding:7px 5px;
-text-align:center;
-}
-#mixed {
-	background: #CCC;
-	width:255px;
-	margin-right:30px;
-}
-small { 
-background:wheat none repeat scroll 0 0;
-border:1px solid gray;
-display:block;
-font-size:13px;
-margin:7px 0;
-padding:6px;
-}
-#newVersion
-{
-	background:lightGreen none repeat scroll 0 0;
-	border:1px solid green;
-	color:green;
-	display:block;
-	font-weight:bold;
-	margin-bottom:7px;
-	margin-top:-14px;
-	padding:8px 0;
-	text-align:center;
-	width:100%;
-	font-size: 10px;
-}
-#hide {
-display:block;
-float:left;
-font-size:14px;
-height:27px;
-margin-right:7px;
-padding-right:5px;
-}
-h1 { font-size:20px;
-margin-bottom:-2px; }
-h1 span {
-	font-size:10px;
-}
+	<title>Rita Process Game</title>
+	<style>
+		body {
+			font-family: "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif;
+			font-size: 90%;
+			background: #d9f6ff;
+		}
 
-a#fdbk_tab:hover {
-	width:38px !important;
-}
+		* {
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+		}
 
-a#fdbk_tab {
-background-image:url(feedback_trans_tab.png);
-color:#FFFFFF;
-cursor:pointer;
-height:102px;
-left:0;
-margin-left:-7px;
-overflow:hidden;
-position:fixed;
-text-indent:-100000px;
-top:50%;
-width:42px;
-z-index:100000;
-}
+		a:link {
+			text-decoration: none;
+			color: #0000FF;
+		}
 
-a.fdbk_tab_right {
-left:auto !important;
-margin-left:auto !important;
-margin-right:0 !important;
-right:0 !important;
-width:35px !important;
-color:#669517;
-outline-color:-moz-use-text-color;
-outline-style:none;
-outline-width:medium;
-text-decoration:none;
-}
+		a:active {
+			text-decoration: none;
+			color: #0000FF;
+		}
 
-</style>
-<script type="text/javascript" src="js/jquery-1.2.1.js"></script>
-<script type="text/javascript" src="js/ui.sortable.js"></script>
+		a:visited {
+			text-decoration: none;
+			color: #0000FF;
+		}
+
+		a:hover {
+			text-decoration: underline;
+			color: #0000FF;
+		}
+
+		li {
+			list-style-type: none;
+			border: solid 1px gray;
+			margin: 0 4px 1px -11px;
+			padding: 5px 10px;
+			font-size: 13px;
+			cursor: move;
+			background: #E7E7E7;
+		}
+
+		li:hover {
+			background: #FFF;
+		}
+
+		ul {
+			padding-left: 1em;
+			margin-left: 0em;
+		}
+
+		.pane ul {
+			margin-bottom: 4px;
+		}
+
+		li span {
+			font-weight: bold;
+			font-size: 105%;
+		}
+
+		.unmovable {
+			list-style-type: none;
+			font-size: 1px;
+			padding: 0px;
+			margin: 0px;
+			border: none;
+		}
+
+		div {
+			float: left;
+			background: #DCDCDC;
+			margin-right: 5px;
+			width: 130px;
+			border: 1px solid #333;
+			margin-bottom: 20px;
+		}
+
+		.containerTitle {
+			display: block;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 7px 5px;
+			text-align: center;
+		}
+
+		#mixed {
+			background: #CCC;
+			width: 255px;
+			margin-right: 30px;
+		}
+
+		small {
+			background: wheat none repeat scroll 0 0;
+			border: 1px solid gray;
+			display: block;
+			font-size: 13px;
+			margin: 7px 0;
+			padding: 6px;
+		}
+
+		#newVersion {
+			background: lightGreen none repeat scroll 0 0;
+			border: 1px solid green;
+			color: green;
+			display: block;
+			font-weight: bold;
+			margin-bottom: 7px;
+			margin-top: -14px;
+			padding: 8px 0;
+			text-align: center;
+			width: 100%;
+			font-size: 10px;
+		}
+
+		#hide {
+			display: block;
+			float: left;
+			font-size: 14px;
+			height: 27px;
+			margin-right: 7px;
+			padding-right: 5px;
+		}
+
+		h1 {
+			font-size: 20px;
+			margin-bottom: -2px;
+		}
+
+		h1 span {
+			font-size: 10px;
+		}
+
+		a#fdbk_tab:hover {
+			width: 38px !important;
+		}
+
+		a#fdbk_tab {
+			background-image: url(feedback_trans_tab.png);
+			color: #FFFFFF;
+			cursor: pointer;
+			height: 102px;
+			left: 0;
+			margin-left: -7px;
+			overflow: hidden;
+			position: fixed;
+			text-indent: -100000px;
+			top: 50%;
+			width: 42px;
+			z-index: 100000;
+		}
+
+		a.fdbk_tab_right {
+			left: auto !important;
+			margin-left: auto !important;
+			margin-right: 0 !important;
+			right: 0 !important;
+			width: 35px !important;
+			color: #669517;
+			outline-color: -moz-use-text-color;
+			outline-style: none;
+			outline-width: medium;
+			text-decoration: none;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.2.1.js"></script>
+	<script type="text/javascript" src="js/ui.sortable.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
 </head>
+
 <body>
-	
 
 
-	
-<h1 align="center">&nbsp;&nbsp;Rita's Process Game [UNOFFICIAL - only for educational purpose]<sup style="font-size:8px;"> v1.2</sup><br />
-	<span>
-		Based to Rita Mulcahy's PMP Exam Prep <b>Ninth</b> Edition
-	</span>
-</h1>
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="QPZ2Q3C8L63YN">
+		<div style="position:absolute;top:2px;right:5px;width:380px;text-align:right;float:left;border:0;background:none;font-size:11px;">Buy me a cup of coffee if you like this game</div>
+		<input style="position:absolute;top:17px;right:5px" type="image" src="https://www.paypal.com/en_GB/i/btn/btn_donate_SM.gif"
+		 border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+		<img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+	</form>
 
-<hr />
 
-<small><a id="hide" href="#">Hide</a><strong>How to play?</strong> Just drag any item from 'mixed' list and drop it just under its appropriate heading. After you finish, go and check ur result. For best results use any browser other than Internet Explorer.<br />
-<strong>Download:</strong> Please <a href="rita_proccess_game.zip">click here</a> to download this game. Unzip it anywhere in your computer and open 'index.htm'<br />
-</small>
+	<h1 align="center">&nbsp;&nbsp;Rita's Process Game [UNOFFICIAL - only for educational purpose]
+		<sup style="font-size:8px;"> v1.2</sup>
+		<br />
+		<span>
+			Based to Rita Mulcahy's PMP Exam Prep
+			<b>Ninth</b> Edition
+		</span>
+	</h1>
 
-&raquo; <a href="index.html" id="new">Start new game</a> &raquo;
-<a href="#" id="shu">Shuffle the 'Mixed' list</a> &raquo; 
-<a href="#" id="planning">Planning processes ordering test</a> <span>&raquo;</span> 
-<a href="#" id="result">Show results</a>
-<hr />
-<ul id="masterList">
+	<hr />
+
+	<small>
+		<a id="hide" href="#">Hide</a>
+		<strong>How to play?</strong> Just drag any item from 'mixed' list and drop it just under its appropriate heading. After you finish,
+		go and check ur result. For best results use any browser other than Internet Explorer.
+		<br />
+		<strong>Download:</strong> Please
+		<a href="rita_proccess_game.zip">click here</a> to download this game. Unzip it anywhere in your computer and open 'index.htm'
+		<br />
+	</small>
+
+	&raquo;
+	<a href="index.html" id="new">Start new game</a> &raquo;
+	<a href="#" id="shu">Shuffle the 'Mixed' list</a> &raquo;
+	<a href="#" id="planning">Planning processes ordering test</a>
+	<span>&raquo;</span>
+	<a href="#" id="result">Show results</a>
+	<hr />
+	<ul id="masterList">
 		<div id="mixed">
 			<span class="containerTitle">Mixed</span>
 			<ul id="0">
@@ -196,7 +275,7 @@ text-decoration:none;
 				<li id="3" value="314">Give recognition & rewards</li>
 				<li id="3" value="315">Use issue logs</li>
 				<li id="3" value="316">Facilitate conflict resolution</li>
-				<li id="3" value="317">Release resources as work is completed</li>		
+				<li id="3" value="317">Release resources as work is completed</li>
 				<li id="3" value="318">Send & receive information & solicit feedback</li>
 				<li id="3" value="319">Report on project performance</li>
 				<li id="3" value="320">Facilitate stakeholder engagement & manage expectations</li>
@@ -206,219 +285,214 @@ text-decoration:none;
 				<li id="3" value="324">Execute contingency plans</li>
 				<li id="3" value="325">Update project management plan & project doc
 
-				<li id="4" value="401">Take action to monitor & control the project</li>
-				<li id="4" value="402">Measure performance against performance measurement baseline</li>
-				<li id="4" value="403">Measure performance against other metrics in the project management plan</li>
-				<li id="4" value="404">Analyze & evaluate data & performance</li>
-				<li id="4" value="405">Determine if variances warrant a corrective action or other change request(s)</li>
-				<li id="4" value="406">Influence factors that cause change </li>
-				<li id="4" value="407">Request changes (4)</li>
-				<li id="4" value="408">Perform integrated change control</li>
-				<li id="4" value="409">Approve or reject changes</li>
-				<li id="4" value="410">Update project management plan & project documents</li>
-				<li id="4" value="411">Inform stakeholders of all change request results</li>
-				<li id="4" value="412">Monitor stakeholder engagement</li>
-				<li id="4" value="413">Confirm configuration compliance</li>
-				<li id="4" value="414">Create forecasts</li>
-				<li id="4" value="415">Gain customer’s acceptance of interim deliverables</li>
-				<li id="4" value="416">Perform quality control</li>
-				<li id="4" value="417">Perform risk reviews, reassessments, & audits</li>
-				<li id="4" value="418">Manage reserves</li>
-				<li id="4" value="419">Manage, evaluate, & close procurements</li>
-				<li id="4" value="420">Evaluate use of physical resources</li>
+					<li id="4" value="401">Take action to monitor & control the project</li>
+					<li id="4" value="402">Measure performance against performance measurement baseline</li>
+					<li id="4" value="403">Measure performance against other metrics in the project management plan</li>
+					<li id="4" value="404">Analyze & evaluate data & performance</li>
+					<li id="4" value="405">Determine if variances warrant a corrective action or other change request(s)</li>
+					<li id="4" value="406">Influence factors that cause change </li>
+					<li id="4" value="407">Request changes (4)</li>
+					<li id="4" value="408">Perform integrated change control</li>
+					<li id="4" value="409">Approve or reject changes</li>
+					<li id="4" value="410">Update project management plan & project documents</li>
+					<li id="4" value="411">Inform stakeholders of all change request results</li>
+					<li id="4" value="412">Monitor stakeholder engagement</li>
+					<li id="4" value="413">Confirm configuration compliance</li>
+					<li id="4" value="414">Create forecasts</li>
+					<li id="4" value="415">Gain customer’s acceptance of interim deliverables</li>
+					<li id="4" value="416">Perform quality control</li>
+					<li id="4" value="417">Perform risk reviews, reassessments, & audits</li>
+					<li id="4" value="418">Manage reserves</li>
+					<li id="4" value="419">Manage, evaluate, & close procurements</li>
+					<li id="4" value="420">Evaluate use of physical resources</li>
 
-				<li id="5" value="501">Confirm work is done to requirements</li>
-				<li id="5" value="502">Complete final procurement closure</li>
-				<li id="5" value="503">Gain final acceptance of product</li>
-				<li id="5" value="504">Complete financial closure</li>
-				<li id="5" value="505">Hand off completed project</li>
-				<li id="5" value="506">Solicit customer’s feedback about the project</li>
-				<li id="5" value="507">Complete final performance reporting</li>
-				<li id="5" value="508">Index & archive records</li>
-				<li id="5" value="509">Gather final lessons learned & update knowledge bases</li>				
+					<li id="5" value="501">Confirm work is done to requirements</li>
+					<li id="5" value="502">Complete final procurement closure</li>
+					<li id="5" value="503">Gain final acceptance of product</li>
+					<li id="5" value="504">Complete financial closure</li>
+					<li id="5" value="505">Hand off completed project</li>
+					<li id="5" value="506">Solicit customer’s feedback about the project</li>
+					<li id="5" value="507">Complete final performance reporting</li>
+					<li id="5" value="508">Index & archive records</li>
+					<li id="5" value="509">Gather final lessons learned & update knowledge bases</li>
 			</ul>
 		</div>
-	
+
 		<div class="pane">
 			<span class="containerTitle">Initiating</span>
 			<ul id="1">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
-	
+
 		<div class="pane">
 			<span class="containerTitle">Planning</span>
 			<ul id="2" class="planning">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
-	
+
 		<div class="pane">
 			<span class="containerTitle">Executing</span>
 			<ul id="3">
 				<li class="unmovable"></li>
 			</ul>
-		</div>	
-	
+		</div>
+
 		<div style="width:230px" class="pane">
 			<span class="containerTitle">Monitoring and Controlling</span>
 			<ul id="4">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
-	
+
 		<div class="pane">
 			<span class="containerTitle">Closing</span>
 			<ul id="5">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
-	</li>
-</ul>
+		</li>
+	</ul>
 
-<script type="text/javascript">
-	var totalItems = $('#0 li').length;
-	//Shuffle the list
-	$('#0').shuffle();
-	$('#shu').click(function(){ 
+	<script type="text/javascript">
+		var totalItems = $('#0 li').length;
+		//Shuffle the list
 		$('#0').shuffle();
-		$("#masterList").sortable({ items: "li", handle:'.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true,forceHelperSize: true});
-		return false;
-	});
-	
-	//Planning processes ordering test
-	$('#planning').click(function(){
-		//first trigger new game
-		$('#new').trigger('click').replaceWith("<a href='index.html'>Start new game</a>");
-		$('#result').replaceWith("<a href='#' id='seq' style='color:#C60'>Show sequence errors and hints to fix them</a>");
-		$('#shu').replaceWith("<a href='#' id='shuPla'>Shuffle the 'Planning' list</a>");
-		
-		$('#shuPla').click(function(){ 
-			$('.planning').shuffle();
-			$(".planning").sortable({ items: "li", handle:'.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true,forceHelperSize: true});
+		$('#shu').click(function () {
+			$('#0').shuffle();
+			$("#masterList").sortable({ items: "li", handle: '.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true, forceHelperSize: true });
 			return false;
 		});
-		
-		//Show sequence of planning items
-		$('#seq').click(function(){
-			$('.unmovable').remove();
-			
-			i=201;
-			n=1;
-			
-			$('.pane ul').find('li').each(function(){
-				$(this).attr('rel',i);
-				i++;
-			});
-			
-			$('.pane ul').find('li').each(function(){
-				if(parseInt($(this).attr('rel'))!=parseInt($(this).attr('value')))
-				{
-					var updown='';
-					if(parseInt($(this).attr('rel'))>parseInt($(this).attr('value')))
-						updown=parseInt($(this).attr('rel'))-parseInt($(this).attr('value'))+" steps UP &uarr;"; 
-					else
-						updown=parseInt($(this).attr('value'))-parseInt($(this).attr('rel'))+" steps DOWN &darr;";
-					
-					$(this).find('.bullet').remove();
-					$(this).html("<span class=bullet>"+updown+" - </span>"+ $(this).html()).css('background','#C60');
-				}
-				else
-				{
-					$(this).find('.bullet').remove();
-					$(this).html("<span class=bullet>"+n+" - </span>"+ $(this).html()).css('background','#E7E7E7');
-				}
-				n++;
-			});
-			
-		  return false;
-		});
-		
-		//From everything from mixed but leave planning
-		$('#0').find('li').each(function(){
-			if($(this).attr('id')!='2') $(this).remove();//remove all others
-		});
-		
-		//shift planning list from mixed to planning
-		$('.planning').append($('#0').html());
-		//Shuffle planning list
-		$('.planning').shuffle().parent().css({"width":"500px", "margin":"0 auto","position":"absolute","left":"32%"});
-		$(".planning").sortable({ items: "li", handle:'.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true,forceHelperSize: true});
-		
-		//Remove all other panels and just leave the planning panel for eazy sorting
-		$('#masterList').find('ul').each(function(){
-			if(!$(this).hasClass('planning')) $(this).parent().remove();
-		});
-		return false;
-	});
-	
-	
-	$('#new').click(function(){
-		if(!confirm('Are you sure you want to start a new game?')) return false;
-		var list='';
-		$('.pane').each(function(){
-			list+=$(this).find('ul').html();
-			$(this).find('ul').html("<li class='unmovable'></li>");
-		});
-		$('#0').append(list).shuffle();
-		$('#0').find('.correct').each(function(){
-			$(this).parent().css('background','#E7E7E7');
-			$(this).remove();
-		});
-		$('#r').remove();
-		$("#masterList").sortable({ items: "li", handle:'.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true,forceHelperSize: true});
-		return false;
-	});
-	
-	//Make all <li> items in the list sortable using the jQuery UI Sortables code
-	$("#masterList").sortable({ items: "li", handle:'.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true,forceHelperSize: true});
-	$(".containerTitle").mousedown(function(){ alert('You cannot move main heading!'); });
-	$('#hide,#hide1').click(function(){ $(this).parent().slideUp('slow');return false; });
-	
-	$('#result').click(
-		function()
-		{
-			if($('#0').find('li').length==totalItems)
-			{
-				alert('No results found.');
+
+		//Planning processes ordering test
+		$('#planning').click(function () {
+			//first trigger new game
+			$('#new').trigger('click').replaceWith("<a href='index.html'>Start new game</a>");
+			$('#result').replaceWith("<a href='#' id='seq' style='color:#C60'>Show sequence errors and hints to fix them</a>");
+			$('#shu').replaceWith("<a href='#' id='shuPla'>Shuffle the 'Planning' list</a>");
+
+			$('#shuPla').click(function () {
+				$('.planning').shuffle();
+				$(".planning").sortable({ items: "li", handle: '.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true, forceHelperSize: true });
 				return false;
-				//if (!confirm('Are you sure you want to check the results\nbefore you complete the game?')) return false;
-			}
-			
-			var wrong=0;
-			var total=0;
-			$("#masterList").find('li').each(function(){
-				//Check the result
-				if($(this).attr('id')!=$(this).parent().attr('id') && $(this).parent().attr('id')!='0' && $(this).attr('class')!='unmovable')
-				{
-					$(this).css("background","#FF7774");
-					wrong+=1;
-					var correctHeading='';
-					var currentId=$(this).attr('id');
-					$("#masterList").find('ul').each(function(){
-						if($(this).attr('id')==currentId)
-							correctHeading=$(this).parent().find('.containerTitle').html();
-					});
-					$(this).find('.correct').remove();
-					$(this).append("<span class='correct' style='display:block;padding-top:3px;margin-top:3px;border-top: 1px dotted #ff0000;'><strong>Should be under:<br> \""+ correctHeading +"\"</strong></span>");
-				}
-				
-				//attmpted
-				if($(this).parent().attr('id')!='0' && $(this).attr('class')!='unmovable') total+=1;
+			});
+
+			//Show sequence of planning items
+			$('#seq').click(function () {
+				$('.unmovable').remove();
+
+				i = 201;
+				n = 1;
+
+				$('.pane ul').find('li').each(function () {
+					$(this).attr('rel', i);
+					i++;
+				});
+
+				$('.pane ul').find('li').each(function () {
+					if (parseInt($(this).attr('rel')) != parseInt($(this).attr('value'))) {
+						var updown = '';
+						if (parseInt($(this).attr('rel')) > parseInt($(this).attr('value')))
+							updown = parseInt($(this).attr('rel')) - parseInt($(this).attr('value')) + " steps UP &uarr;";
+						else
+							updown = parseInt($(this).attr('value')) - parseInt($(this).attr('rel')) + " steps DOWN &darr;";
+
+						$(this).find('.bullet').remove();
+						$(this).html("<span class=bullet>" + updown + " - </span>" + $(this).html()).css('background', '#C60');
+					}
+					else {
+						$(this).find('.bullet').remove();
+						$(this).html("<span class=bullet>" + n + " - </span>" + $(this).html()).css('background', '#E7E7E7');
+					}
+					n++;
+				});
+
+				return false;
+			});
+
+			//From everything from mixed but leave planning
+			$('#0').find('li').each(function () {
+				if ($(this).attr('id') != '2') $(this).remove();//remove all others
+			});
+
+			//shift planning list from mixed to planning
+			$('.planning').append($('#0').html());
+			//Shuffle planning list
+			$('.planning').shuffle().parent().css({ "width": "500px", "margin": "0 auto", "position": "absolute", "left": "32%" });
+			$(".planning").sortable({ items: "li", handle: '.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true, forceHelperSize: true });
+
+			//Remove all other panels and just leave the planning panel for eazy sorting
+			$('#masterList').find('ul').each(function () {
+				if (!$(this).hasClass('planning')) $(this).parent().remove();
+			});
+			return false;
+		});
+
+
+		$('#new').click(function () {
+			if (!confirm('Are you sure you want to start a new game?')) return false;
+			var list = '';
+			$('.pane').each(function () {
+				list += $(this).find('ul').html();
+				$(this).find('ul').html("<li class='unmovable'></li>");
+			});
+			$('#0').append(list).shuffle();
+			$('#0').find('.correct').each(function () {
+				$(this).parent().css('background', '#E7E7E7');
+				$(this).remove();
 			});
 			$('#r').remove();
-			
-			if(total>0)
-			{
-				var string="<span id='r'> ( Total: <strong>"+totalItems+"</strong> | Attempted: <strong>";
-				string+=total+"</strong> | Result: <strong>"+ parseInt(total-wrong)+"</strong> out of <strong>";
-				string+=total + "</strong> | <strong>";
-				string+=parseInt((total-wrong)*100/total);
-				string+="%</strong>)</span>";
-				$(this).after(string);
-			}
+			$("#masterList").sortable({ items: "li", handle: '.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true, forceHelperSize: true });
 			return false;
 		});
-</script>
+
+		//Make all <li> items in the list sortable using the jQuery UI Sortables code
+		$("#masterList").sortable({ items: "li", handle: '.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true, forceHelperSize: true });
+		$(".containerTitle").mousedown(function () { alert('You cannot move main heading!'); });
+		$('#hide,#hide1').click(function () { $(this).parent().slideUp('slow'); return false; });
+
+		$('#result').click(
+			function () {
+				if ($('#0').find('li').length == totalItems) {
+					alert('No results found.');
+					return false;
+					//if (!confirm('Are you sure you want to check the results\nbefore you complete the game?')) return false;
+				}
+
+				var wrong = 0;
+				var total = 0;
+				$("#masterList").find('li').each(function () {
+					//Check the result
+					if ($(this).attr('id') != $(this).parent().attr('id') && $(this).parent().attr('id') != '0' && $(this).attr('class') != 'unmovable') {
+						$(this).css("background", "#FF7774");
+						wrong += 1;
+						var correctHeading = '';
+						var currentId = $(this).attr('id');
+						$("#masterList").find('ul').each(function () {
+							if ($(this).attr('id') == currentId)
+								correctHeading = $(this).parent().find('.containerTitle').html();
+						});
+						$(this).find('.correct').remove();
+						$(this).append("<span class='correct' style='display:block;padding-top:3px;margin-top:3px;border-top: 1px dotted #ff0000;'><strong>Should be under:<br> \"" + correctHeading + "\"</strong></span>");
+					}
+
+					//attmpted
+					if ($(this).parent().attr('id') != '0' && $(this).attr('class') != 'unmovable') total += 1;
+				});
+				$('#r').remove();
+
+				if (total > 0) {
+					var string = "<span id='r'> ( Total: <strong>" + totalItems + "</strong> | Attempted: <strong>";
+					string += total + "</strong> | Result: <strong>" + parseInt(total - wrong) + "</strong> out of <strong>";
+					string += total + "</strong> | <strong>";
+					string += parseInt((total - wrong) * 100 / total);
+					string += "%</strong>)</span>";
+					$(this).after(string);
+				}
+				return false;
+			});
+	</script>
 </body>
+
 </html>
