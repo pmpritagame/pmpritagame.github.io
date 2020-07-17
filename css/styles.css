@@ -65,6 +65,13 @@ li span {
     border: none;
 }
 
+div.select-language{
+    height: 50px;
+    direction: ltr;
+    text-align: center;
+    display: contents;
+}
+
 div {
     float: left;
     background: #DCDCDC;

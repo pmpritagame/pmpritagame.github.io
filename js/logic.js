@@ -1,3 +1,9 @@
+var tran = new Translater({
+    lang:"en",
+    lang:"ru"
+});
+tran.setLang('default');
+
 var totalItems = $('#0 li').length;
 //Shuffle the list
 $('#0').shuffle();
