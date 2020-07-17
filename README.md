@@ -1,5 +1,7 @@
 ## Rita's Process Game v.9
 
+[Play the Game](https://pmpritagame.github.io)
+
 ### Supported languages:
 - English
 - Russian
