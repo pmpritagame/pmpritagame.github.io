@@ -67,13 +67,16 @@ div.select-language{
     display: contents;
 }
 
-div {
+div.pane {
     float: left;
     background: #DCDCDC;
-    margin-right: 5px;
-    width: 130px;
     border: 1px solid #333;
+    margin-left: 10px;
     margin-bottom: 20px;
+}
+
+div.container{
+    min-width: 100%;
 }
 
 .containerTitle {
@@ -86,8 +89,7 @@ div {
 
 #mixed {
     background: #CCC;
-    width: 255px;
-    margin-right: 30px;
+    margin: 0 30px;
 }
 
 small {

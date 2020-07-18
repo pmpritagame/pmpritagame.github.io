@@ -6,6 +6,7 @@
 
 	<title>Rita Process Game</title>
 	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<link href="css/simple-grid.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -62,8 +63,10 @@
 	<span>&raquo;</span>
 	<a href="#" id="result">Show results<!--{ru}Показать результаты--></a>
 	<hr />
-	<ul id="masterList">
-		<div id="mixed">
+	<div id="masterList"  class="container">
+		<div class="row">
+
+		<div id="mixed" class="pane col-2">
 			<span class="containerTitle">Mixed<!--{ru}Перемешанный список--></span>
 			<ul id="0">
 				<li id="1" value="101">Select project manager<!--{ru}Выбрать менеджера проекта--><!--{ru}--></li>
@@ -165,42 +168,42 @@
 			</ul>
 		</div>
 
-		<div class="pane">
+		<div class="pane col-2">
 			<span class="containerTitle">Initiating<!--{ru}Инициация--></span>
 			<ul id="1">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
 
-		<div class="pane">
+		<div class="pane col-2">
 			<span class="containerTitle">Planning<!--{ru}Планирование--></span>
 			<ul id="2" class="planning">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
 
-		<div class="pane">
+		<div class="pane col-3">
 			<span class="containerTitle">Executing<!--{ru}Исполнение--></span>
 			<ul id="3">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
 
-		<div style="width:230px" class="pane">
+		<div class="pane col-2">
 			<span class="containerTitle">Monitoring and Controlling<!--{ru}Мониторинг и контроль--></span>
 			<ul id="4">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
 
-		<div class="pane">
+		<div class="pane col-2">
 			<span class="containerTitle">Closing<!--{ru}Закрытие--></span>
 			<ul id="5">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
-		</li>
-	</ul>
+	</div>
+</div>
 </body>
 <script type="text/javascript" src="js/jquery-1.2.1.js"></script>
 <script type="text/javascript" src="js/ui.sortable.js"></script>
