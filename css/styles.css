@@ -3,6 +3,9 @@ body {
     font-size: 90%;
     background: #d9f6ff;
 }
+*{
+    line-height: 1.0;
+}
 
 a:link {
     text-decoration: none;
@@ -23,6 +26,9 @@ a:hover {
     text-decoration: underline;
     color: #0000FF;
 }
+a.github-corner path{
+    color: #FFFFFF;
+}
 
 li {
     list-style-type: none;
@@ -41,6 +47,11 @@ li:hover {
 ul {
     padding-left: 1em;
     margin-left: 0em;
+}
+
+div.row.header{
+    margin: 0 auto;
+    width: 99%;
 }
 
 .pane ul {
