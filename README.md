@@ -1,6 +1,6 @@
 ## Rita's Process Game v.9
 
-[Play the Game](https://pmpritagame.github.io)
+[Play the Game](https://shoshins.github.io/rita-puzzle/)
 
 ### Supported languages:
 - English
@@ -8,7 +8,7 @@
 - Fill free to contribute your language :)
 
 ### Links
-- Rita's Process Game (v.9): https://pmpritagame.github.io
+- Rita's Process Game (v.9): https://shoshins.github.io/rita-puzzle/
 - PMBOK Process Game (v.6): https://shoshins.github.io/pmbok-puzzle/
 
 ### Notes
