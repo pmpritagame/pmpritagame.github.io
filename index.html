@@ -2,193 +2,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124433208-3"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-124433208-3');
+	</script>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 	<title>Rita Process Game</title>
-	<style>
-		body {
-			font-family: "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif;
-			font-size: 90%;
-			background: #d9f6ff;
-		}
-
-		* {
-			-moz-border-radius: 5px;
-			-webkit-border-radius: 5px;
-		}
-
-		a:link {
-			text-decoration: none;
-			color: #0000FF;
-		}
-
-		a:active {
-			text-decoration: none;
-			color: #0000FF;
-		}
-
-		a:visited {
-			text-decoration: none;
-			color: #0000FF;
-		}
-
-		a:hover {
-			text-decoration: underline;
-			color: #0000FF;
-		}
-
-		li {
-			list-style-type: none;
-			border: solid 1px gray;
-			margin: 0 4px 1px -11px;
-			padding: 5px 10px;
-			font-size: 13px;
-			cursor: move;
-			background: #E7E7E7;
-		}
-
-		li:hover {
-			background: #FFF;
-		}
-
-		ul {
-			padding-left: 1em;
-			margin-left: 0em;
-		}
-
-		.pane ul {
-			margin-bottom: 4px;
-		}
-
-		li span {
-			font-weight: bold;
-			font-size: 105%;
-		}
-
-		.unmovable {
-			list-style-type: none;
-			font-size: 1px;
-			padding: 0px;
-			margin: 0px;
-			border: none;
-		}
-
-		div {
-			float: left;
-			background: #DCDCDC;
-			margin-right: 5px;
-			width: 130px;
-			border: 1px solid #333;
-			margin-bottom: 20px;
-		}
-
-		.containerTitle {
-			display: block;
-			font-size: 16px;
-			font-weight: bold;
-			padding: 7px 5px;
-			text-align: center;
-		}
-
-		#mixed {
-			background: #CCC;
-			width: 255px;
-			margin-right: 30px;
-		}
-
-		small {
-			background: wheat none repeat scroll 0 0;
-			border: 1px solid gray;
-			display: block;
-			font-size: 13px;
-			margin: 7px 0;
-			padding: 6px;
-		}
-
-		#newVersion {
-			background: lightGreen none repeat scroll 0 0;
-			border: 1px solid green;
-			color: green;
-			display: block;
-			font-weight: bold;
-			margin-bottom: 7px;
-			margin-top: -14px;
-			padding: 8px 0;
-			text-align: center;
-			width: 100%;
-			font-size: 10px;
-		}
-
-		#hide {
-			display: block;
-			float: left;
-			font-size: 14px;
-			height: 27px;
-			margin-right: 7px;
-			padding-right: 5px;
-		}
-
-		h1 {
-			font-size: 20px;
-			margin-bottom: -2px;
-		}
-
-		h1 span {
-			font-size: 10px;
-		}
-
-		a#fdbk_tab:hover {
-			width: 38px !important;
-		}
-
-		a#fdbk_tab {
-			background-image: url(feedback_trans_tab.png);
-			color: #FFFFFF;
-			cursor: pointer;
-			height: 102px;
-			left: 0;
-			margin-left: -7px;
-			overflow: hidden;
-			position: fixed;
-			text-indent: -100000px;
-			top: 50%;
-			width: 42px;
-			z-index: 100000;
-		}
-
-		a.fdbk_tab_right {
-			left: auto !important;
-			margin-left: auto !important;
-			margin-right: 0 !important;
-			right: 0 !important;
-			width: 35px !important;
-			color: #669517;
-			outline-color: -moz-use-text-color;
-			outline-style: none;
-			outline-width: medium;
-			text-decoration: none;
-		}
-	</style>
-	<script type="text/javascript" src="js/jquery-1.2.1.js"></script>
-	<script type="text/javascript" src="js/ui.sortable.js"></script>
-	<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+	<link href="css/simple-grid.min.css" rel="stylesheet" type="text/css">
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
+	<!-- GITHUB CORNER -->
+	<a href="https://github.com/shoshins/rita-puzzle" class="github-corner" aria-label="View source on GitHub">
+		<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+			<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+			<path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+			<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+		</svg>
+	</a>
+	<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	<!-- GITHUB CORNER -->
 
-	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-		<input type="hidden" name="cmd" value="_s-xclick">
-		<input type="hidden" name="hosted_button_id" value="QPZ2Q3C8L63YN">
-		<div style="position:absolute;top:2px;right:5px;width:380px;text-align:right;float:left;border:0;background:none;font-size:11px;">Buy me a cup of coffee if you like this game</div>
-		<input style="position:absolute;top:17px;right:5px" type="image" src="https://www.paypal.com/en_GB/i/btn/btn_donate_SM.gif"
-		 border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
-		<img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-	</form>
-
-
-	<h1 align="center">&nbsp;&nbsp;Rita's Process Game [UNOFFICIAL - only for educational purpose]
-		<sup style="font-size:8px;"> v1.2</sup>
+	<h1 align="center">&nbsp;&nbsp;Rita's Process Game
+		<sup style="font-size:8px;"> v2.0</sup>
 		<br />
 		<span>
 			Based to Rita Mulcahy's PMP Exam Prep
@@ -196,303 +41,184 @@
 		</span>
 	</h1>
 
-	<hr />
+	<div class="select-language">
+		<h5>
+			Select your language:
+			<!--{ru}Выберите язык:-->
+		</h5>
+		<p>
+			<a href="javascript:tran.setLang('default');"><img src="assets/gb.png" alt="English" height="20px"/></a>
+			<a href="javascript:tran.setLang('ru');"><img src="assets/ru.png" alt="Russian" height="20px"/></a>
+		</p>
+	</div>
 
-	<small>
-		<a id="hide" href="#">Hide</a>
-		<strong>How to play?</strong> Just drag any item from 'mixed' list and drop it just under its appropriate heading. After you finish,
-		go and check ur result. For best results use any browser other than Internet Explorer.
-		<br />
-		<strong>Download:</strong> Please
-		<a href="rita_proccess_game.zip">click here</a> to download this game. Unzip it anywhere in your computer and open 'index.htm'
-		<br />
-	</small>
+	<div class="row header">
+		<hr />
+		<small>
+			<a id="hide" href="#">Hide<!--{ru}Скрыть--></a>
+			<strong>How to play?<!--{ru}Как играть?--></strong> Just drag any item from 'mixed' list and drop it just under its appropriate heading. After you finish,
+			go and check ur result. For best results use any browser other than Internet Explorer.
+			<!--{ru} Просто перетащите любой элемент из «перемешанного» списка и поместите его под соответствующим заголовком. После того, как вы закончите,
+	проверьте свой результат. Для достижения наилучших результатов используйте любой браузер, кроме Internet Explorer.-->
+			<br />
+			<strong>Download:<!--{ru}Загрузить:--></strong> Please<!--{ru} Пожалуйста-->
+			<a href="rita_proccess_game.zip">click here<!--{ru}нажмите здесь--></a> to download this game. Unzip it anywhere in your computer and open 'index.htm'<!--{ru} чтобы загрузить эту игру. Unzip ее где удобно на компьютере и откройте 'index.htm'-->
+			<br />
+		</small>
 
-	&raquo;
-	<a href="index.html" id="new">Start new game</a> &raquo;
-	<a href="#" id="shu">Shuffle the 'Mixed' list</a> &raquo;
-	<a href="#" id="planning">Planning processes ordering test</a>
-	<span>&raquo;</span>
-	<a href="#" id="result">Show results</a>
-	<hr />
-	<ul id="masterList">
-		<div id="mixed">
-			<span class="containerTitle">Mixed</span>
+		&raquo;
+		<a href="index.html" id="new">Start new game<!--{ru}Начать новую игру--></a> &raquo;
+		<a href="#" id="shu">Shuffle the 'Mixed' list<!--{ru}Перемешать--></a> &raquo;
+		<a href="#" id="planning">Planning processes ordering test<!--{ru}Проверить порядок процессов группы "Планирование"--></a>
+		<span>&raquo;</span>
+		<a href="#" id="result">Show results<!--{ru}Показать результаты--></a>
+		<hr />
+	</div>
+	<div id="masterList"  class="container">
+		<div class="row">
+
+		<div id="mixed" class="pane col-2">
+			<span class="containerTitle">Mixed<!--{ru}Перемешанный список--></span>
 			<ul id="0">
-				<li id="1" value="101">Select project manager</li>
-				<li id="1" value="102">Determine company culture & existing systems</li>
-				<li id="1" value="103">Collect processes, procedures, & historical information</li>
-				<li id="1" value="104">Divide large projects into phases or smaller projects</li>
-				<li id="1" value="105">Understand business case & benefits management plan</li>
-				<li id="1" value="106">Uncover initial requirements, assumptions, risks, constraints & existing agreements</li>
-				<li id="1" value="107">Assess project & product feasibility within the given constraints</li>
-				<li id="1" value="108">Create measurable objectives & success criteria</li>
-				<li id="1" value="109">Develop project charter</li>
-				<li id="1" value="110">Identify stakeholders & determine their expectations, interest, influence, & impact</li>
-				<li id="1" value="111">Request changes (1)</li>
-				<li id="1" value="112">Develop assumption log</li>
-				<li id="1" value="113">Develop stakeholder register</li>
+				<li id="1" value="101">Select project manager<!--{ru}Выбрать менеджера проекта--><!--{ru}--></li>
+				<li id="1" value="102">Determine company culture & existing systems<!--{ru}Определить культуру компании и существующие системы--><!--{ru}--></li>
+				<li id="1" value="103">Collect processes, procedures, & historical information<!--{ru}Собрать процессы, процедуры и историческую информацию--></li>
+				<li id="1" value="104">Divide large projects into phases or smaller projects<!--{ru}Разделить большие проекты на фазы или меньшие проекты--></li>
+				<li id="1" value="105">Understand business case & benefits management plan<!--{ru}Понять бизнес-план и план управления выгодами--></li>
+				<li id="1" value="106">Uncover initial requirements, assumptions, risks, constraints & existing agreements<!--{ru}Раскрыть начальные требования, предположения, риски, ограничения и существующие соглашения--></li>
+				<li id="1" value="107">Assess project & product feasibility within the given constraints<!--{ru}Оценить осуществимость проекта и продукта в рамках заданных ограничений--></li>
+				<li id="1" value="108">Create measurable objectives & success criteria<!--{ru}Создать измеримые цели и критерии успеха--></li>
+				<li id="1" value="109">Develop project charter<!--{ru}Разработать устав проекта--></li>
+				<li id="1" value="110">Identify stakeholders & determine their expectations, interest, influence, & impact<!--{ru}Идентифицировать заинтересованные стороны и определить их ожидания, интересы, влияние и воздействие--></li>
+				<li id="1" value="111">Request changes (1)<!--{ru}Создать запрос на изменения (1)--></li>
+				<li id="1" value="112">Develop assumption log<!--{ru}Создать журнал допущений--></li>
+				<li id="1" value="113">Develop stakeholder register<!--{ru}Создать реестр заинтересованных сторон--></li>
 
-				<li id="2" value="201">Determine development approach, life cycle, & how you will plan for each knowledge area</li>
-				<li id="2" value="202">Define & prioritize requirements</li>
-				<li id="2" value="203">Create project scope statement</li>
-				<li id="2" value="204">Assess what to purchase & create procurement documents</li>
-				<li id="2" value="205">Determine planning team</li>
-				<li id="2" value="206">Create WBS & WBS dictionary</li>
-				<li id="2" value="207">Create activity list</li>
-				<li id="2" value="208">Create network diagram</li>
-				<li id="2" value="209">Estimate resource requirements</li>
-				<li id="2" value="210">Estimate activity durations & costs</li>
-				<li id="2" value="211">Determine critical path</li>
-				<li id="2" value="212">Develop schedule</li>
-				<li id="2" value="213">Develop budget</li>
-				<li id="2" value="214">Determine quality standards, processes, & metrics</li>
-				<li id="2" value="215">Determine team charter & all roles & responsibilities</li>
-				<li id="2" value="216">Plan communications & stakeholder engagement</li>
-				<li id="2" value="217">Perform risk identification, qualitative & quantitative risk analysis, & risk response planning</li>
-				<li id="2" value="218">Go back - iterations</li>
-				<li id="2" value="219">Finalize procurement strategy & documents</li>
-				<li id="2" value="220">Create change & configuration management plans</li>
-				<li id="2" value="221">Finalize all management plans</li>
-				<li id="2" value="222">Develop realistic & sufficient project management plan & baselines</li>
-				<li id="2" value="223">Gain formal approval of the plan</li>
-				<li id="2" value="224">Hold kickoff meeting</li>
-				<li id="2" value="225">Request changes (2)</li>
+				<li id="2" value="201">Determine development approach, life cycle, & how you will plan for each knowledge area<!--{ru}Определить подход к разработке, жизненный цикл и то, как каждая область знаний будет спланирована--></li>
+				<li id="2" value="202">Define & prioritize requirements<!--{ru}Определить и приоритизировать требования--></li>
+				<li id="2" value="203">Create project scope statement<!--{ru}Создать описание содержания проекта--></li>
+				<li id="2" value="204">Assess what to purchase & create procurement documents<!--{ru}Оценить, что потребуется закупить и создать документы по закупкам--></li>
+				<li id="2" value="205">Determine planning team<!--{ru}Определить команду планирования--></li>
+				<li id="2" value="206">Create WBS & WBS dictionary<!--{ru}Создать ИСР и словарь ИСР--></li>
+				<li id="2" value="207">Create activity list<!--{ru}Создать список операций--></li>
+				<li id="2" value="208">Create network diagram<!--{ru}Создать диаграмму сети расписания проекта--></li>
+				<li id="2" value="209">Estimate resource requirements<!--{ru}Оценить требования к ресурсам--></li>
+				<li id="2" value="210">Estimate activity durations & costs<!--{ru}Оценить длительность операций и их стоимость--></li>
+				<li id="2" value="211">Determine critical path<!--{ru}Определить критический путь--></li>
+				<li id="2" value="212">Develop schedule<!--{ru}Разработать расписание--></li>
+				<li id="2" value="213">Develop budget<!--{ru}Разработать бюджет--></li>
+				<li id="2" value="214">Determine quality standards, processes, & metrics<!--{ru}Определить стандарты качества, процессы и показатели--></li>
+				<li id="2" value="215">Determine team charter & all roles & responsibilities<!--{ru}Определить устав команды, все роли и обязанности--></li>
+				<li id="2" value="216">Plan communications & stakeholder engagement<!--{ru}Спланировать коммуникации и вовлечение заинтересованных сторон--></li>
+				<li id="2" value="217">Perform risk identification, qualitative & quantitative risk analysis, & risk response planning<!--{ru}Выполнить идентификацию рисков, качественный и количественный анализ рисков и спланировать реагирование на риски--></li>
+				<li id="2" value="218">Go back - iterations<!--{ru}Вернуться назад - итерации--></li>
+				<li id="2" value="219">Finalize procurement strategy & documents<!--{ru}Завершить стратегию закупок и документы по закупкам--></li>
+				<li id="2" value="220">Create change & configuration management plans<!--{ru}Создать план управления изменениями и конфигурацией--></li>
+				<li id="2" value="221">Finalize all management plans<!--{ru}Завершить создание всех планов управления проектом--></li>
+				<li id="2" value="222">Develop realistic & sufficient project management plan & baselines<!--{ru}Разработать реалистичный и достаточный план управления проектом и базовые планы--></li>
+				<li id="2" value="223">Gain formal approval of the plan<!--{ru}Получить официальное одобрение плана--></li>
+				<li id="2" value="224">Hold kickoff meeting<!--{ru}Провести стартовое совещание проекта--></li>
+				<li id="2" value="225">Request changes (2)<!--{ru}Создать запрос на изменения (2)--></li>
 
-				<li id="3" value="301">Execute work according to the project management plan</li>
-				<li id="3" value="302">Produce product deliverables (product scope)</li>
-				<li id="3" value="303">Gather work performance data</li>
-				<li id="3" value="304">Request changes (3)</li>
-				<li id="3" value="305">Implement only approved changes</li>
-				<li id="3" value="306">Continuously improve, perform progressive elaboration</li>
-				<li id="3" value="307">Follow processes</li>
-				<li id="3" value="308">Determine whether quality plan & processes are correct & effective</li>
-				<li id="3" value="309">Perform quality audits & issue quality report</li>
-				<li id="3" value="310">Acquire final team & physical resources</li>
-				<li id="3" value="311">Manage people</li>
-				<li id="3" value="312">Evaluate team & individual performance; provide training</li>
-				<li id="3" value="313">Hold team-building activities</li>
-				<li id="3" value="314">Give recognition & rewards</li>
-				<li id="3" value="315">Use issue logs</li>
-				<li id="3" value="316">Facilitate conflict resolution</li>
-				<li id="3" value="317">Release resources as work is completed</li>
-				<li id="3" value="318">Send & receive information & solicit feedback</li>
-				<li id="3" value="319">Report on project performance</li>
-				<li id="3" value="320">Facilitate stakeholder engagement & manage expectations</li>
-				<li id="3" value="321">Hold meetings</li>
-				<li id="3" value="322">Evaluate sellers, negotiate & contract with sellers</li>
-				<li id="3" value="323">Use & share project knowledge</li>
-				<li id="3" value="324">Execute contingency plans</li>
-				<li id="3" value="325">Update project management plan & project doc
+				<li id="3" value="301">Execute work according to the project management plan<!--{ru}Выполнить работу в соответствии с планом управления проектом--></li>
+				<li id="3" value="302">Produce product deliverables (product scope)<!--{ru}Производить поставляемые результаты (содержание продукта)--></li>
+				<li id="3" value="303">Gather work performance data<!--{ru}Собрать данные об исполнении--></li>
+				<li id="3" value="304">Request changes (3)<!--{ru}Создать запрос на изменения (3)--></li>
+				<li id="3" value="305">Implement only approved changes<!--{ru}Реализовать только ободренные изменения--></li>
+				<li id="3" value="306">Continuously improve, perform progressive elaboration<!--{ru}Постоянно улучшать, выполнять последовательное уточнение--></li>
+				<li id="3" value="307">Follow processes<!--{ru}Следовать процессам--></li>
+				<li id="3" value="308">Determine whether quality plan & processes are correct & effective<!--{ru}Определить, являются ли план и процессы качества правильными и эффективными--></li>
+				<li id="3" value="309">Perform quality audits & issue quality report<!--{ru}Провести аудит качества и создать отчет о качестве--></li>
+				<li id="3" value="310">Acquire final team & physical resources<!--{ru}Получить финальную команду и физические ресурсы--></li>
+				<li id="3" value="311">Manage people<!--{ru}Управлять людьми--></li>
+				<li id="3" value="312">Evaluate team & individual performance; provide training<!--{ru}Оценить командное и индивидуальное исполнение, обеспечить обучение--></li>
+				<li id="3" value="313">Hold team-building activities<!--{ru}Проводить мероприятия по укреплению команды--></li>
+				<li id="3" value="314">Give recognition & rewards<!--{ru}Показать признание и вознаграждать--></li>
+				<li id="3" value="315">Use issue logs<!--{ru}Использовать журнал проблем--></li>
+				<li id="3" value="316">Facilitate conflict resolution<!--{ru}Способствовать разрешению конфликтов--></li>
+				<li id="3" value="317">Release resources as work is completed<!--{ru}По завершению работы освободить ресурсы--></li>
+				<li id="3" value="318">Send & receive information & solicit feedback<!--{ru}Отправлять и получать информацию и запрашивать отзывы--></li>
+				<li id="3" value="319">Report on project performance<!--{ru}Докладывать об исполнении проекта--></li>
+				<li id="3" value="320">Facilitate stakeholder engagement & manage expectations<!--{ru}Способствовать вовлечению заинтересованных сторон и управлять ожиданиями--></li>
+				<li id="3" value="321">Hold meetings<!--{ru}Проводить совещания--></li>
+				<li id="3" value="322">Evaluate sellers, negotiate & contract with sellers<!--{ru}Оценивать продавцов, проводить переговоры и заключать договоры с продавцами--></li>
+				<li id="3" value="323">Use & share project knowledge<!--{ru}Использовать и делиться знаниями проекта--></li>
+				<li id="3" value="324">Execute contingency plans<!--{ru}Исполнять планы возможных потерь--></li>
+				<li id="3" value="325">Update project management plan & project doc<!--{ru}Обновлять плана управления проектом и проектной документации--></li>
 
-					<li id="4" value="401">Take action to monitor & control the project</li>
-					<li id="4" value="402">Measure performance against performance measurement baseline</li>
-					<li id="4" value="403">Measure performance against other metrics in the project management plan</li>
-					<li id="4" value="404">Analyze & evaluate data & performance</li>
-					<li id="4" value="405">Determine if variances warrant a corrective action or other change request(s)</li>
-					<li id="4" value="406">Influence factors that cause change </li>
-					<li id="4" value="407">Request changes (4)</li>
-					<li id="4" value="408">Perform integrated change control</li>
-					<li id="4" value="409">Approve or reject changes</li>
-					<li id="4" value="410">Update project management plan & project documents</li>
-					<li id="4" value="411">Inform stakeholders of all change request results</li>
-					<li id="4" value="412">Monitor stakeholder engagement</li>
-					<li id="4" value="413">Confirm configuration compliance</li>
-					<li id="4" value="414">Create forecasts</li>
-					<li id="4" value="415">Gain customer’s acceptance of interim deliverables</li>
-					<li id="4" value="416">Perform quality control</li>
-					<li id="4" value="417">Perform risk reviews, reassessments, & audits</li>
-					<li id="4" value="418">Manage reserves</li>
-					<li id="4" value="419">Manage, evaluate, & close procurements</li>
-					<li id="4" value="420">Evaluate use of physical resources</li>
+					<li id="4" value="401">Take action to monitor & control the project<!--{ru}Принять меры для мониторинга и контроля проекта--></li>
+					<li id="4" value="402">Measure performance against performance measurement baseline<!--{ru}Измерение исполнения по сравнению с базовым планом--></li>
+					<li id="4" value="403">Measure performance against other metrics in the project management plan<!--{ru}Измерение исполнения по сравнению с другими показателями в плане управления проектом--></li>
+					<li id="4" value="404">Analyze & evaluate data & performance<!--{ru}Анализировать и оценивать данные и производительность--></li>
+					<li id="4" value="405">Determine if variances warrant a corrective action or other change request(s)<!--{ru}Определите, требуют ли отклонения корректирующих действий или других запросов на изменения--></li>
+					<li id="4" value="406">Influence factors that cause change <!--{ru}Влиять на факторы, которые вызывают изменения--></li>
+					<li id="4" value="407">Request changes (4)<!--{ru}Создать запрос на изменения (4)--></li>
+					<li id="4" value="408">Perform integrated change control<!--{ru}Выполнить интегрированный контроль изменений--></li>
+					<li id="4" value="409">Approve or reject changes<!--{ru}Утвердить или отклонить изменения--></li>
+					<li id="4" value="410">Update project management plan & project documents<!--{ru}Обновление плана управления проектом и проектной документации--></li>
+					<li id="4" value="411">Inform stakeholders of all change request results<!--{ru}Информировать заинтересованные стороны обо всех результатах запроса на изменение--></li>
+					<li id="4" value="412">Monitor stakeholder engagement<!--{ru}Мониторинг вовлечения заинтересованных сторон--></li>
+					<li id="4" value="413">Confirm configuration compliance<!--{ru}Подтвердите соответствие конфигурации--></li>
+					<li id="4" value="414">Create forecasts<!--{ru}Создавайте прогнозы--></li>
+					<li id="4" value="415">Gain customer’s acceptance of interim deliverables<!--{ru}Получите одобрение клиента на принятие промежуточных результатов--></li>
+					<li id="4" value="416">Perform quality control<!--{ru}Выполнить контроль качества--></li>
+					<li id="4" value="417">Perform risk reviews, reassessments, & audits<!--{ru}Провести анализ рисков, переоценку и аудит--></li>
+					<li id="4" value="418">Manage reserves<!--{ru}Управление резервами--></li>
+					<li id="4" value="419">Manage, evaluate, & close procurements<!--{ru}Управлять, оценивать и закрывать закупки--></li>
+					<li id="4" value="420">Evaluate use of physical resources<!--{ru}Оценить использование физических ресурсов--></li>
 
-					<li id="5" value="501">Confirm work is done to requirements</li>
-					<li id="5" value="502">Complete final procurement closure</li>
-					<li id="5" value="503">Gain final acceptance of product</li>
-					<li id="5" value="504">Complete financial closure</li>
-					<li id="5" value="505">Hand off completed project</li>
-					<li id="5" value="506">Solicit customer’s feedback about the project</li>
-					<li id="5" value="507">Complete final performance reporting</li>
-					<li id="5" value="508">Index & archive records</li>
-					<li id="5" value="509">Gather final lessons learned & update knowledge bases</li>
+					<li id="5" value="501">Confirm work is done to requirements<!--{ru}Подтвердите, что выполненная работа соответствует требованиям--></li>
+					<li id="5" value="502">Complete final procurement closure<!--{ru}Окончательное закрытие закупок--></li>
+					<li id="5" value="503">Gain final acceptance of product<!--{ru}Получить окончательное принятие продукта--></li>
+					<li id="5" value="504">Complete financial closure<!--{ru}Провести полное финансовое закрытие--></li>
+					<li id="5" value="505">Hand off completed project<!--{ru}Передача готового проекта (конечного продукта)--></li>
+					<li id="5" value="506">Solicit customer’s feedback about the project<!--{ru}Соберите отзывы клиентов о проекте--></li>
+					<li id="5" value="507">Complete final performance reporting<!--{ru}Завершите финальный отчет по исполнению--></li>
+					<li id="5" value="508">Index & archive records<!--{ru}Проиндексируйте и заархивируйте записи--></li>
+					<li id="5" value="509">Gather final lessons learned & update knowledge bases<!--{ru}Соберите окончательные извлеченные уроки и обновите базы знаний--></li>
 			</ul>
 		</div>
 
-		<div class="pane">
-			<span class="containerTitle">Initiating</span>
+		<div class="pane col-2">
+			<span class="containerTitle">Initiating<!--{ru}Инициация--></span>
 			<ul id="1">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
 
-		<div class="pane">
-			<span class="containerTitle">Planning</span>
+		<div class="pane col-2">
+			<span class="containerTitle">Planning<!--{ru}Планирование--></span>
 			<ul id="2" class="planning">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
 
-		<div class="pane">
-			<span class="containerTitle">Executing</span>
+		<div class="pane col-3">
+			<span class="containerTitle">Executing<!--{ru}Исполнение--></span>
 			<ul id="3">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
 
-		<div style="width:230px" class="pane">
-			<span class="containerTitle">Monitoring and Controlling</span>
+		<div class="pane col-2">
+			<span class="containerTitle">Monitoring and Controlling<!--{ru}Мониторинг и контроль--></span>
 			<ul id="4">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
 
-		<div class="pane">
-			<span class="containerTitle">Closing</span>
+		<div class="pane col-2">
+			<span class="containerTitle">Closing<!--{ru}Закрытие--></span>
 			<ul id="5">
 				<li class="unmovable"></li>
 			</ul>
 		</div>
-		</li>
-	</ul>
-
-	<script type="text/javascript">
-		var totalItems = $('#0 li').length;
-		//Shuffle the list
-		$('#0').shuffle();
-		$('#shu').click(function () {
-			$('#0').shuffle();
-			$("#masterList").sortable({ items: "li", handle: '.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true, forceHelperSize: true });
-			return false;
-		});
-
-		//Planning processes ordering test
-		$('#planning').click(function () {
-			//first trigger new game
-			$('#new').trigger('click').replaceWith("<a href='index.html'>Start new game</a>");
-			$('#result').replaceWith("<a href='#' id='seq' style='color:#C60'>Show sequence errors and hints to fix them</a>");
-			$('#shu').replaceWith("<a href='#' id='shuPla'>Shuffle the 'Planning' list</a>");
-
-			$('#shuPla').click(function () {
-				$('.planning').shuffle();
-				$(".planning").sortable({ items: "li", handle: '.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true, forceHelperSize: true });
-				return false;
-			});
-
-			//Show sequence of planning items
-			$('#seq').click(function () {
-				$('.unmovable').remove();
-
-				i = 201;
-				n = 1;
-
-				$('.pane ul').find('li').each(function () {
-					$(this).attr('rel', i);
-					i++;
-				});
-
-				$('.pane ul').find('li').each(function () {
-					if (parseInt($(this).attr('rel')) != parseInt($(this).attr('value'))) {
-						var updown = '';
-						if (parseInt($(this).attr('rel')) > parseInt($(this).attr('value')))
-							updown = parseInt($(this).attr('rel')) - parseInt($(this).attr('value')) + " steps UP &uarr;";
-						else
-							updown = parseInt($(this).attr('value')) - parseInt($(this).attr('rel')) + " steps DOWN &darr;";
-
-						$(this).find('.bullet').remove();
-						$(this).html("<span class=bullet>" + updown + " - </span>" + $(this).html()).css('background', '#C60');
-					}
-					else {
-						$(this).find('.bullet').remove();
-						$(this).html("<span class=bullet>" + n + " - </span>" + $(this).html()).css('background', '#E7E7E7');
-					}
-					n++;
-				});
-
-				return false;
-			});
-
-			//From everything from mixed but leave planning
-			$('#0').find('li').each(function () {
-				if ($(this).attr('id') != '2') $(this).remove();//remove all others
-			});
-
-			//shift planning list from mixed to planning
-			$('.planning').append($('#0').html());
-			//Shuffle planning list
-			$('.planning').shuffle().parent().css({ "width": "500px", "margin": "0 auto", "position": "absolute", "left": "32%" });
-			$(".planning").sortable({ items: "li", handle: '.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true, forceHelperSize: true });
-
-			//Remove all other panels and just leave the planning panel for eazy sorting
-			$('#masterList').find('ul').each(function () {
-				if (!$(this).hasClass('planning')) $(this).parent().remove();
-			});
-			return false;
-		});
-
-
-		$('#new').click(function () {
-			if (!confirm('Are you sure you want to start a new game?')) return false;
-			var list = '';
-			$('.pane').each(function () {
-				list += $(this).find('ul').html();
-				$(this).find('ul').html("<li class='unmovable'></li>");
-			});
-			$('#0').append(list).shuffle();
-			$('#0').find('.correct').each(function () {
-				$(this).parent().css('background', '#E7E7E7');
-				$(this).remove();
-			});
-			$('#r').remove();
-			$("#masterList").sortable({ items: "li", handle: '.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true, forceHelperSize: true });
-			return false;
-		});
-
-		//Make all <li> items in the list sortable using the jQuery UI Sortables code
-		$("#masterList").sortable({ items: "li", handle: '.containerTitle', opacity: 0.6, helper: 'clone', forcePlaceholderSize: true, forceHelperSize: true });
-		$(".containerTitle").mousedown(function () { alert('You cannot move main heading!'); });
-		$('#hide,#hide1').click(function () { $(this).parent().slideUp('slow'); return false; });
-
-		$('#result').click(
-			function () {
-				if ($('#0').find('li').length == totalItems) {
-					alert('No results found.');
-					return false;
-					//if (!confirm('Are you sure you want to check the results\nbefore you complete the game?')) return false;
-				}
-
-				var wrong = 0;
-				var total = 0;
-				$("#masterList").find('li').each(function () {
-					//Check the result
-					if ($(this).attr('id') != $(this).parent().attr('id') && $(this).parent().attr('id') != '0' && $(this).attr('class') != 'unmovable') {
-						$(this).css("background", "#FF7774");
-						wrong += 1;
-						var correctHeading = '';
-						var currentId = $(this).attr('id');
-						$("#masterList").find('ul').each(function () {
-							if ($(this).attr('id') == currentId)
-								correctHeading = $(this).parent().find('.containerTitle').html();
-						});
-						$(this).find('.correct').remove();
-						$(this).append("<span class='correct' style='display:block;padding-top:3px;margin-top:3px;border-top: 1px dotted #ff0000;'><strong>Should be under:<br> \"" + correctHeading + "\"</strong></span>");
-					}
-
-					//attmpted
-					if ($(this).parent().attr('id') != '0' && $(this).attr('class') != 'unmovable') total += 1;
-				});
-				$('#r').remove();
-
-				if (total > 0) {
-					var string = "<span id='r'> ( Total: <strong>" + totalItems + "</strong> | Attempted: <strong>";
-					string += total + "</strong> | Result: <strong>" + parseInt(total - wrong) + "</strong> out of <strong>";
-					string += total + "</strong> | <strong>";
-					string += parseInt((total - wrong) * 100 / total);
-					string += "%</strong>)</span>";
-					$(this).after(string);
-				}
-				return false;
-			});
-	</script>
+	</div>
+</div>
 </body>
-
+<script type="text/javascript" src="js/jquery-1.2.1.js"></script>
+<script type="text/javascript" src="js/ui.sortable.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+<script src="https://unpkg.com/translater.js/dist/translater.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/logic.js"></script>
 </html>

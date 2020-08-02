@@ -1,0 +1,177 @@
+body {
+    font-family: "Helvetica Neue", HelveticaNeue, Helvetica, sans-serif;
+    font-size: 90%;
+    background: #d9f6ff;
+}
+*{
+    line-height: 1.0;
+}
+
+a:link {
+    text-decoration: none;
+    color: #0000FF;
+}
+
+a:active {
+    text-decoration: none;
+    color: #0000FF;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #0000FF;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0000FF;
+}
+a.github-corner path{
+    color: #FFFFFF;
+}
+
+li {
+    list-style-type: none;
+    border: solid 1px gray;
+    margin: 0 4px 1px -11px;
+    padding: 5px 10px;
+    font-size: 13px;
+    cursor: move;
+    background: #E7E7E7;
+}
+
+li:hover {
+    background: #FFF;
+}
+
+ul {
+    padding-left: 1em;
+    margin-left: 0em;
+}
+
+div.row.header{
+    margin: 0 auto;
+    width: 99%;
+}
+
+.pane ul {
+    margin-bottom: 4px;
+}
+
+li span {
+    font-weight: bold;
+    font-size: 105%;
+}
+
+.unmovable {
+    list-style-type: none;
+    font-size: 1px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+div.select-language{
+    height: 50px;
+    direction: ltr;
+    text-align: center;
+    display: contents;
+}
+
+div.pane {
+    float: left;
+    background: #DCDCDC;
+    border: 1px solid #333;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+div.container{
+    min-width: 100%;
+}
+
+.containerTitle {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 7px 5px;
+    text-align: center;
+}
+
+#mixed {
+    background: #CCC;
+    margin: 0 30px;
+}
+
+small {
+    background: wheat none repeat scroll 0 0;
+    border: 1px solid gray;
+    display: block;
+    font-size: 13px;
+    margin: 7px 0;
+    padding: 6px;
+}
+
+#newVersion {
+    background: lightGreen none repeat scroll 0 0;
+    border: 1px solid green;
+    color: green;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+    margin-top: -14px;
+    padding: 8px 0;
+    text-align: center;
+    width: 100%;
+    font-size: 10px;
+}
+
+#hide {
+    display: block;
+    float: left;
+    font-size: 14px;
+    height: 27px;
+    margin-right: 7px;
+    padding-right: 5px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: -2px;
+}
+
+h1 span {
+    font-size: 10px;
+}
+
+a#fdbk_tab:hover {
+    width: 38px !important;
+}
+
+a#fdbk_tab {
+    background-image: url(feedback_trans_tab.png);
+    color: #FFFFFF;
+    cursor: pointer;
+    height: 102px;
+    left: 0;
+    margin-left: -7px;
+    overflow: hidden;
+    position: fixed;
+    text-indent: -100000px;
+    top: 50%;
+    width: 42px;
+    z-index: 100000;
+}
+
+a.fdbk_tab_right {
+    left: auto !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    right: 0 !important;
+    width: 35px !important;
+    color: #669517;
+    outline-color: -moz-use-text-color;
+    outline-style: none;
+    outline-width: medium;
+    text-decoration: none;
+}
