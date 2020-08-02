@@ -3,10 +3,8 @@ body {
     font-size: 90%;
     background: #d9f6ff;
 }
-
-* {
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+*{
+    line-height: 1.0;
 }
 
 a:link {
@@ -28,6 +26,9 @@ a:hover {
     text-decoration: underline;
     color: #0000FF;
 }
+a.github-corner path{
+    color: #FFFFFF;
+}
 
 li {
     list-style-type: none;
@@ -46,6 +47,11 @@ li:hover {
 ul {
     padding-left: 1em;
     margin-left: 0em;
+}
+
+div.row.header{
+    margin: 0 auto;
+    width: 99%;
 }
 
 .pane ul {
@@ -72,13 +78,16 @@ div.select-language{
     display: contents;
 }
 
-div {
+div.pane {
     float: left;
     background: #DCDCDC;
-    margin-right: 5px;
-    width: 130px;
     border: 1px solid #333;
+    margin-left: 10px;
     margin-bottom: 20px;
+}
+
+div.container{
+    min-width: 100%;
 }
 
 .containerTitle {
@@ -91,8 +100,7 @@ div {
 
 #mixed {
     background: #CCC;
-    width: 255px;
-    margin-right: 30px;
+    margin: 0 30px;
 }
 
 small {
